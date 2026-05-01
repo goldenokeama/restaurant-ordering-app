@@ -1,3 +1,28 @@
 import { menuArray } from "./data.js";
 
-console.log("menu:", menuArray);
+function getMenuFeed() {
+  let menuListItems = "";
+
+  menuArray.forEach(function (menu) {
+    menuListItems += `
+      <li>
+        <div class="item-graphic">
+          <span>${menu.emoji} </span>
+        </div>
+        <div class="item-details">
+          <h3 class="name">${menu.name}</h3>
+          <p class="ingredients">${menu.ingredients.join(", ")}</p>
+          <p class="price">$${menu.price}</p>
+        </div>
+        <buttton class="add-btn"><p>+</p></buttton>
+      </li>
+    `;
+  });
+
+  return menuListItems;
+}
+
+function render() {
+  document.getElementById("menu-feed").innerHTML = getMenuFeed();
+}
+render();
