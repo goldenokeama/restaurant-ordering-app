@@ -5,12 +5,12 @@ function getMenuFeed() {
 
   menuArray.forEach(function (menu) {
     menuListItems += `
-      <li>
+      <li class="item-list">
         <div class="item-graphic">
           <span>${menu.emoji} </span>
         </div>
         <div class="item-details">
-          <h3 class="name">${menu.name}</h3>
+          <h2 class="name">${menu.name}</h2>
           <p class="ingredients">${menu.ingredients.join(", ")}</p>
           <p class="price">$${menu.price}</p>
         </div>
