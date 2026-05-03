@@ -18,6 +18,10 @@ body {
   margin: 0 auto;
 }
 
+.btn {
+  cursor: pointer;
+}
+
 .header {
   background-image: url("./images/bg-img.png");
   background-size: cover;
@@ -68,12 +72,16 @@ body {
 .sub-container {
   padding-left: 1.44em; /* 23px */
   padding-right: 1.44em;
+
+  padding-bottom: 2em; /* 32px */
 }
 
 @media (min-width: 480px) {
   .sub-container {
     padding-left: 2.875em; /* 46px */
     padding-right: 2.875em;
+
+    padding-bottom: 3em;
   }
 }
 
@@ -91,9 +99,6 @@ li {
   margin-bottom: 2em;
 }
 
-.item-list:not(:last-child) {
-}
-
 .item-details {
   display: flex;
   flex-direction: column;
@@ -104,7 +109,6 @@ li {
   /* line-height: 99px; */
 
   width: 70px;
-  /* background: red; */
   display: flex;
 }
 .item-graphic span {
@@ -163,6 +167,9 @@ li {
   display: flex;
   margin-left: auto;
 }
+.add-btn:hover {
+  border: 1.5px solid #4f4e4e;
+}
 
 .add-btn p {
   font-family: "Inter", sans-serif;
@@ -175,4 +182,85 @@ li {
   width: 27px;
   height: 28.5px;
   text-align: center;
+}
+
+/* ==================== 
+    Checkout section
+=====================*/
+.your-order {
+  text-align: center;
+  font-size: 1.75rem; /* 28px */
+  line-height: 16.8px;
+  margin-bottom: 1.5em;
+  font-weight: 400;
+}
+.orders {
+  border-bottom: 2px solid #393333;
+}
+.order {
+  display: flex;
+  gap: 13px;
+  margin-bottom: 1.375em;
+}
+.order-name {
+  font-size: 1.75rem; /* 28px */
+  line-height: 16.8px;
+  color: #000000;
+  font-weight: 400;
+}
+
+.btn-remove {
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  font-size: 0.75rem;
+  line-height: 24px;
+  letter-spacing: 1.5px;
+  color: #bbbbbb;
+  padding: 0.05em 0.2em;
+}
+
+.btn-remove:hover {
+  border-radius: 20px;
+  color: #4e0404;
+  border: 0.1px solid #bbbbbb;
+}
+.order-price {
+  margin-left: auto;
+}
+
+.total {
+  display: flex;
+  margin-top: 0.875em;
+  margin-bottom: 2.5em;
+}
+.total-price-text {
+  color: #0e0e0e;
+  font-weight: 400;
+  font-size: 1.75rem; /* 28px */
+  line-height: 24px;
+}
+.total-price {
+  margin-left: auto;
+}
+
+.btn-complete-order {
+  border: none;
+  width: 100%;
+  background: #16db99;
+
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem; /* 16px */
+  line-height: 24px;
+  border-radius: 3px;
+
+  padding-top: 1.125em; /* 18px */
+  padding-bottom: 1.125em;
+
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.btn-complete-order:hover {
+  background: #079d6b;
 }

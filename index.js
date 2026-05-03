@@ -14,7 +14,7 @@ function getMenuFeed() {
           <p class="ingredients">${menu.ingredients.join(", ")}</p>
           <p class="price">$${menu.price}</p>
         </div>
-        <buttton class="add-btn"><p>+</p></buttton>
+        <buttton class="btn add-btn"><p>+</p></buttton>
       </li>
     `;
   });
