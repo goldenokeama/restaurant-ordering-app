@@ -34,7 +34,7 @@
             <!-- Menu list goes -->
           </ul>
 
-          <section class="checkout-section">
+          <section class="checkout-section" id="checkout-section">
             <h3 class="your-order">Your order</h3>
             <ul class="orders">
               <li class="order">
@@ -53,28 +53,33 @@
           </section>
         </div>
       </main>
-      <section id="modal-card-details">
-        <h2>Enter card details</h2>
+      <section id="modal-card-details" class="modal-card-details">
+        <h2 class="card-details-text">Enter card details</h2>
         <form>
           <input
             type="text"
+            id="your-name"
             placeholder="Enter your name"
             aria-label="Enter your name"
             required
           />
           <input
             type="number"
+            id="card-number"
             placeholder="Enter card number"
             aria-label="Enter card number"
             required
           />
           <input
             type="number"
+            id="cvv"
+            class="input-cvv"
             placeholder="Enter CVV"
             aria-label="Enter CVV"
+            max="3"
             required
           />
-          <button class="btn btn-primary">Pay</button>
+          <button class="btn btn-primary" id="btn-pay">Pay</button>
         </form>
       </section>
     </div>
