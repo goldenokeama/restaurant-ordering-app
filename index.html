@@ -49,10 +49,34 @@
               <span class="total-price">$26</span>
             </div>
 
-            <button class="btn btn-complete-order">Complete order</button>
+            <button class="btn btn-primary">Complete order</button>
           </section>
         </div>
       </main>
+      <section id="modal-card-details">
+        <h2>Enter card details</h2>
+        <form>
+          <input
+            type="text"
+            placeholder="Enter your name"
+            aria-label="Enter your name"
+            required
+          />
+          <input
+            type="number"
+            placeholder="Enter card number"
+            aria-label="Enter card number"
+            required
+          />
+          <input
+            type="number"
+            placeholder="Enter CVV"
+            aria-label="Enter CVV"
+            required
+          />
+          <button class="btn btn-primary">Pay</button>
+        </form>
+      </section>
     </div>
     <script src="index.js" type="module"></script>
   </body>
