@@ -278,7 +278,7 @@ li {
   max-width: 524px;
   border-radius: 4px;
 
-  box-shadow: 0 0 50px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 100px 0px rgba(0, 0, 0, 0.4);
 
   position: fixed;
   top: 200px;
@@ -326,4 +326,37 @@ input {
 }
 .input-cvv {
   margin-bottom: 40px;
+}
+
+/*===============
+    Thank you section
+=================*/
+
+.thank-you-message {
+  width: 100%;
+  border-radius: 3px;
+  background: #ecfdf5;
+
+  text-align: center;
+  color: #065f46;
+  font-size: 1rem;
+
+  line-height: 8px;
+
+  padding-top: 1.5625em; /* 25px */
+  padding-bottom: 1.5625em;
+  padding-left: 1.875em; /* 30px */
+  padding-right: 1.875em;
+}
+
+@media (min-width: 480px) {
+  .thank-you-message {
+    font-size: 1.3rem; /* 1.3 * 16 = 20.8px*/
+    line-height: 14px;
+
+    padding-top: 1.92em; /* 40px; */
+    padding-bottom: 1.92em;
+    padding-left: 2.4em; /* 50px */
+    padding-right: 2.4em;
+  }
 }
