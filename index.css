@@ -164,24 +164,18 @@ li {
   border-radius: 50%;
   border: 1.5px solid #dedede;
 
-  display: flex;
   margin-left: auto;
-}
-.add-btn:hover {
-  border: 1.5px solid #4f4e4e;
-}
 
-.add-btn p {
   font-family: "Inter", sans-serif;
-  margin: auto;
   font-size: 2rem;
   font-weight: 200;
-  line-height: 24px;
+  line-height: 20px;
   color: #3c3c3c;
-
-  width: 27px;
-  height: 28.5px;
   text-align: center;
+}
+.add-btn:hover,
+.add-btn:focus {
+  border: 1.5px solid #4f4e4e;
 }
 
 /* ==================== 
@@ -224,11 +218,13 @@ li {
   padding: 0.05em 0.2em;
 }
 
-.btn-remove:hover {
+.btn-remove:hover,
+.btn-remove:focus {
   border-radius: 20px;
   color: #4e0404;
   border: 0.1px solid #bbbbbb;
 }
+
 .order-price {
   margin-left: auto;
 }
@@ -249,6 +245,7 @@ li {
 }
 
 .btn-primary {
+  outline: none;
   border: none;
   width: 100%;
   background: #16db99;
@@ -265,7 +262,8 @@ li {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus {
   background: #079d6b;
 }
 
@@ -274,6 +272,7 @@ li {
 ====================*/
 .modal-card-details {
   display: none;
+
   font-family: "Inter", sans-serif;
   max-width: 524px;
   border-radius: 4px;
@@ -324,6 +323,11 @@ input {
 
   margin-bottom: 23px;
 }
+input:hover,
+input:focus {
+  border: 2px solid #079d6b;
+}
+
 .input-cvv {
   margin-bottom: 40px;
 }
@@ -333,6 +337,8 @@ input {
 =================*/
 
 .thank-you-message {
+  display: none;
+
   width: 100%;
   border-radius: 3px;
   background: #ecfdf5;

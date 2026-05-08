@@ -31,18 +31,14 @@
       <main>
         <div class="sub-container">
           <ul class="menu-feed" id="menu-feed">
-            <!-- Menu list goes -->
+            <!-- Menu list goes here-->
           </ul>
 
           <!-- checkout section -->
           <section class="checkout-section" id="checkout-section">
             <h3 class="your-order">Your order</h3>
-            <ul class="orders">
-              <li class="order">
-                <span class="order-name">Pizza</span>
-                <button class="btn btn-remove">remove</button>
-                <span class="order-price">$14</span>
-              </li>
+            <ul class="orders" id="orders">
+              <!-- list of ordered foods goes here -->
             </ul>
 
             <div class="total">
@@ -77,12 +73,13 @@
             required
           />
           <input
-            type="number"
+            type="text"
+            inputmode="numeric"
+            maxlength="3"
             id="cvv"
             class="input-cvv"
             placeholder="Enter CVV"
             aria-label="Enter CVV"
-            max="3"
             required
           />
           <button class="btn btn-primary" id="btn-pay">Pay</button>
