@@ -1,12 +1,18 @@
 import { menuArray } from "./data.js";
 
+const checkoutSection = document.getElementById("checkout-section");
+
+let foodsOrdered = [];
+
 document.addEventListener("click", function (e) {
   if (e.target.dataset.add) {
     handleAddButtonClick(e.target.dataset.add);
   }
-});
 
-let foodsOrdered = [];
+  if (e.target.dataset.remove) {
+    handleRemoveButtonClick(e.target.dataset.remove);
+  }
+});
 
 function handleAddButtonClick(menuId) {
   const targetMenuObj = menuArray.filter(function (menu) {
@@ -17,24 +23,40 @@ function handleAddButtonClick(menuId) {
   renderFoodsOrdered();
 }
 
+function handleRemoveButtonClick(orderedFoodId) {
+  foodsOrdered = foodsOrdered.filter(function (food) {
+    // the + sign converts the orderedFoodId to number data type
+    return food.id !== +orderedFoodId;
+  });
+
+  renderFoodsOrdered();
+}
+
 function renderFoodsOrdered() {
   document.getElementById("orders").innerHTML = getOrderedFoodsHtml();
 
-  document.getElementById("checkout-section").style.display = "block";
+  checkoutSection.style.display = "block";
+
+  // hides the checkout section when there are no ordered foods
+  if (foodsOrdered.length <= 0) {
+    checkoutSection.style.display = "none";
+  }
 }
 
 function getOrderedFoodsHtml() {
-  return foodsOrdered
+  const listHtml = foodsOrdered
     .map((food) => {
       return `
       <li class="order">
         <span class="order-name">${food.name}</span>
-        <button class="btn btn-remove">remove</button>
+        <button class="btn btn-remove" data-remove="${food.id}">remove</button>
         <span class="order-price">$${food.price}</span>
       </li>
     `;
     })
     .join("");
+
+  return listHtml;
 }
 
 function getMenuFeed() {
@@ -46,6 +68,7 @@ function getMenuFeed() {
         <div class="item-graphic">
           <span>${menu.emoji} </span>
         </div>
+
         <div class="item-details">
           <h2 class="name">${menu.name}</h2>
           <p class="ingredients">${menu.ingredients.join(", ")}</p>
@@ -64,5 +87,3 @@ function render() {
   document.getElementById("menu-feed").innerHTML = getMenuFeed();
 }
 render();
-
-// Add focus states to the hover states in the CSS file.
