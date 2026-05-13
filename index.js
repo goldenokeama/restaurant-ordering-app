@@ -32,10 +32,21 @@ function handleRemoveButtonClick(orderedFoodId) {
   renderFoodsOrdered();
 }
 
+function calcTotalPriceOfFoodsOrdered() {
+  let totalPrice = 0;
+
+  foodsOrdered.forEach((food) => (totalPrice += food.price));
+
+  return totalPrice;
+}
+
 function renderFoodsOrdered() {
   document.getElementById("orders").innerHTML = getOrderedFoodsHtml();
 
   checkoutSection.style.display = "block";
+
+  document.getElementById("total-price").textContent =
+    "$" + calcTotalPriceOfFoodsOrdered();
 
   // hides the checkout section when there are no ordered foods
   if (foodsOrdered.length <= 0) {
