@@ -270,7 +270,7 @@ li {
 /* ===================
     Card details modal
 ====================*/
-.modal-card-details {
+.modal-card-section {
   display: none;
 
   font-family: "Inter", sans-serif;

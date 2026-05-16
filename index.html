@@ -46,7 +46,9 @@
               <span class="total-price" id="total-price">$26</span>
             </div>
 
-            <button class="btn btn-primary">Complete order</button>
+            <button class="btn btn-primary" id="complete-order">
+              Complete order
+            </button>
           </section>
 
           <!-- thank you message -->
@@ -55,9 +57,9 @@
           </div>
         </div>
       </main>
-      <section id="modal-card-details" class="modal-card-details">
+      <section id="modal-card-section" class="modal-card-section">
         <h2 class="card-details-text">Enter card details</h2>
-        <form>
+        <form id="form">
           <input
             type="text"
             id="your-name"
@@ -82,7 +84,9 @@
             aria-label="Enter CVV"
             required
           />
-          <button class="btn btn-primary" id="btn-pay">Pay</button>
+          <button class="btn btn-primary" id="btn-pay" type="submit">
+            Pay
+          </button>
         </form>
       </section>
     </div>

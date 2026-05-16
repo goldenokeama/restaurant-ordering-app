@@ -1,6 +1,10 @@
 import { menuArray } from "./data.js";
 
 const checkoutSection = document.getElementById("checkout-section");
+const modalCardSection = document.getElementById("modal-card-section");
+// const btnPay = document.getElementById("btn-pay");
+const form = document.getElementById("form");
+const thankYouMessage = document.getElementById("thank-you-message");
 
 let foodsOrdered = [];
 
@@ -12,6 +16,34 @@ document.addEventListener("click", function (e) {
   if (e.target.dataset.remove) {
     handleRemoveButtonClick(e.target.dataset.remove);
   }
+
+  if (e.target.id === "complete-order") {
+    handleCompleteOrderButtonClick();
+  }
+
+  if (!modalCardSection.contains(e.target)) {
+    // closeModalCardSection()
+    console.log("close the modal");
+  }
+});
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // close the modal card section
+  modalCardSection.style.display = "none";
+
+  // close the checkout section
+  checkoutSection.style.display = "none";
+
+  // display the thank you message
+  thankYouMessage.style.display = "block";
+
+  // clear out the previously ordered meals
+  foodsOrdered = [];
+
+  // reset the input elements values in the form element.
+  form.reset();
 });
 
 function handleAddButtonClick(menuId) {
@@ -32,6 +64,10 @@ function handleRemoveButtonClick(orderedFoodId) {
   renderFoodsOrdered();
 }
 
+function handleCompleteOrderButtonClick() {
+  modalCardSection.style.display = "block";
+}
+
 function calcTotalPriceOfFoodsOrdered() {
   let totalPrice = 0;
 
@@ -44,6 +80,9 @@ function renderFoodsOrdered() {
   document.getElementById("orders").innerHTML = getOrderedFoodsHtml();
 
   checkoutSection.style.display = "block";
+
+  // hide the thank you message if it's showing
+  thankYouMessage.style.display = "none";
 
   document.getElementById("total-price").textContent =
     "$" + calcTotalPriceOfFoodsOrdered();
