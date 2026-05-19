@@ -2,7 +2,7 @@ import { menuArray } from "./data.js";
 
 const checkoutSection = document.getElementById("checkout-section");
 const modalCardSection = document.getElementById("modal-card-section");
-// const btnPay = document.getElementById("btn-pay");
+
 const form = document.getElementById("form");
 const thankYouMessage = document.getElementById("thank-you-message");
 
@@ -22,8 +22,11 @@ document.addEventListener("click", function (e) {
   }
 
   if (!modalCardSection.contains(e.target)) {
-    // closeModalCardSection()
-    console.log("close the modal");
+    // check if the button clicked is not the Complete Order button
+    // because the Complete Order button opens the Modal-Card-Section
+    if (e.target.id !== "complete-order") {
+      closeModalCardSection();
+    }
   }
 });
 
@@ -36,7 +39,10 @@ form.addEventListener("submit", function (e) {
   // close the checkout section
   checkoutSection.style.display = "none";
 
+  const fullName = document.getElementById("your-name").value;
+
   // display the thank you message
+  thankYouMessage.innerHTML = `<p>Thanks, ${fullName}! Your order is on its way!</p>`;
   thankYouMessage.style.display = "block";
 
   // clear out the previously ordered meals
@@ -57,7 +63,7 @@ function handleAddButtonClick(menuId) {
 
 function handleRemoveButtonClick(orderedFoodId) {
   foodsOrdered = foodsOrdered.filter(function (food) {
-    // the + sign converts the orderedFoodId to number data type
+    // the + sign converts the orderedFoodId from string to number data type
     return food.id !== +orderedFoodId;
   });
 
@@ -66,6 +72,10 @@ function handleRemoveButtonClick(orderedFoodId) {
 
 function handleCompleteOrderButtonClick() {
   modalCardSection.style.display = "block";
+}
+
+function closeModalCardSection() {
+  modalCardSection.style.display = "none";
 }
 
 function calcTotalPriceOfFoodsOrdered() {
